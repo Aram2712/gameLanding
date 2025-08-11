@@ -127,8 +127,11 @@ function FAQ() {
                                 <span 
                                     style={{ 
                                         border: '1px solid #FFFFFF1A',
-                                        padding: '5px 10px',
+                                        padding: '5px',
                                         borderRadius: '5px',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
                                         background: item.isOpen ? "#FFFFFF1A" : ""
                                     }}
                                 >
