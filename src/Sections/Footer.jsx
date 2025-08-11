@@ -7,7 +7,7 @@ function Footer() {
     const autoYear = new Date().getFullYear();
 
     return (
-        <footer className='footer'>
+        <footer className='footerSection'>
             <div className='footerContent'>
                 <p className='footerText'>
                     &copy; {autoYear} All rights reserved.

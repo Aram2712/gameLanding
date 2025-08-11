@@ -5,6 +5,7 @@ import { Link } from 'react-scroll';
 import { useState } from 'react';
 import { GiHamburgerMenu } from "react-icons/gi";
 import MobileMenu from './MobileMenu';
+import titleIcon from '../assets/titleIcon.svg'
 
 function Header() {
 
@@ -13,7 +14,10 @@ function Header() {
 
     return (
         <div className={'header-container'}>
-            <h2 className={'headerTitle'}>Test Test</h2>
+            <h2 className={'headerTitle'}>
+                <img src = {titleIcon} alt = {'titleIcon'} className='titleIcon'/>
+                Test Test
+            </h2>
             <div className='navigationContainer'>
                 {
                     headerData.map((item) => (

@@ -201,24 +201,27 @@
 }
 
 .footerSection {
-    width: 70%;
+    width: 75%;
     display: flex;
     padding: 100px 0 15px 0;
     align-items: flex-end;
     font-family: "Poppins", sans-serif;
     color: white;
     font-size: 16px;
+    
 }
 
-.footer {
-    padding: 2rem 0;
-    margin-top: auto;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    background: rgba(10, 10, 10, 0.55);
-}
+// .footer {
+//     padding: 2rem 0;
+//     margin-top: auto;
+//     border-top: 1px solid rgba(255, 255, 255, 0.08);
+//     // background: rgba(10, 10, 10, 0.55);
+//     font-family: "Poppins", sans-serif;
+// }
 
 .footerContent {
-    max-width: 1400px;
+    width: 100%;
+    // max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem;
     display: flex;

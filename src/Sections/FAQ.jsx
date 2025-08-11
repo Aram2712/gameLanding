@@ -139,17 +139,18 @@ function FAQ() {
                                 </div>
                                 <div
                                     style={{
-                                        maxHeight: item.isOpen ? "550px" : "0px",
+                                        maxHeight: item.isOpen ? "500px" : "0",
                                         overflow: "hidden",
                                         transition: "max-height 0.7s ease",
                                         backgroundColor: '#191919',
-                                        padding: '0 16px',
                                         color: 'white',
+                                        padding: "0 16px",
                                         fontWeight: '300',
-                                        fontSize: '14px'
+                                        fontSize: '14px',
                                     }}
+                                    className='faqHiddenBox'
                                 >
-                                    {item.text}
+                                    <p style={{marginBottom:'15px'}}>{item.text}</p>
                                 </div>
                             </div>
                         ))
