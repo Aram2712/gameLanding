@@ -5,7 +5,7 @@ function Footer() {
 
     const year = new Date().getFullYear();
 
-    return(
+    return (
         <section className='footerSection'>
             <span>© {year} All rights reserved</span>
         </section>

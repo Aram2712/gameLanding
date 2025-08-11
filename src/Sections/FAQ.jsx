@@ -3,20 +3,12 @@ import './Sections.scss';
 import bg1 from '../assets/fagbg1.svg';
 import bg2 from '../assets/faqbg2.svg';
 import { useState } from 'react';
-// import arrow from '../assets/arrow.png';
 import { Element } from 'react-scroll';
 import { RiArrowUpSLine } from "react-icons/ri";
 
-type TContent = {
-    id: number,
-    title: string,
-    text: string,
-    isOpen: boolean
-}
-
 function FAQ() {
-    
-    const [content, setContent] = useState<TContent[]>([
+
+    const [content, setContent] = useState([
         {
             id: 1,
             title: 'How can I register?',
@@ -79,9 +71,9 @@ function FAQ() {
         }
     ])
 
-    const openCurrentBox = (item: TContent) => {
+    const openCurrentBox = (item) => {
         setContent(content => content.map(elem => {
-            if(elem.id === item.id) {
+            if (elem.id === item.id) {
                 return {
                     ...elem,
                     isOpen: !elem.isOpen
@@ -92,86 +84,86 @@ function FAQ() {
     }
 
     return (
-        <Element name="faq" style={{width: '100%'}}>
-        <section className='faqContainer'>
-            <img src={bg2} className='faqBackgroundImage1' />
-            <div className='faqTextContentBox'>
-                <h4 className='chooseUsTitle'>Frequently Asked Questions</h4>
-                {
-                    content.map((item) => (
-                        <div
-                            key = {item.id}
-                            style={{
-                                border: "1px solid #FFFFFF1A",
-                                borderRadius: "8px",
-                                marginBottom: "10px",
-                                overflow: "hidden",
-                                width: '100%',
-                            }}
-                        >
+        <Element name="faq" style={{ width: '100%' }}>
+            <section className='faqContainer'>
+                <img src={bg2} className='faqBackgroundImage1' />
+                <div className='faqTextContentBox'>
+                    <h4 className='chooseUsTitle'>Frequently Asked Questions</h4>
+                    {
+                        content.map((item) => (
                             <div
-                                onClick={() => openCurrentBox(item)}
+                                key={item.id}
                                 style={{
-                                    padding: "12px",
-                                    cursor: "pointer",
-                                    backgroundColor: '#191919',
-                                    display: "flex",
-                                    justifyContent: "space-between",
-                                    alignItems: "center",
-                                    fontWeight: "600",
-                                    color: item.isOpen ? '#FF9F19' : 'white',
-                                    fontSize: '16px'
+                                    border: "1px solid #FFFFFF1A",
+                                    borderRadius: "8px",
+                                    marginBottom: "10px",
+                                    overflow: "hidden",
+                                    width: '100%',
                                 }}
                             >
-                                {item.title}
-                                <span 
-                                    style={{ 
-                                        border: '1px solid #FFFFFF1A',
-                                        padding: '5px',
-                                        borderRadius: '5px',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        background: item.isOpen ? "#FFFFFF1A" : ""
+                                <div
+                                    onClick={() => openCurrentBox(item)}
+                                    style={{
+                                        padding: "12px",
+                                        cursor: "pointer",
+                                        backgroundColor: '#191919',
+                                        display: "flex",
+                                        justifyContent: "space-between",
+                                        alignItems: "center",
+                                        fontWeight: "600",
+                                        color: item.isOpen ? '#FF9F19' : 'white',
+                                        fontSize: '16px'
                                     }}
                                 >
-                                    {/* <img 
+                                    {item.title}
+                                    <span
+                                        style={{
+                                            border: '1px solid #FFFFFF1A',
+                                            padding: '5px',
+                                            borderRadius: '5px',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            background: item.isOpen ? "#FFFFFF1A" : ""
+                                        }}
+                                    >
+                                        {/* <img 
                                         src = {arrow} 
                                         style = {{
                                             transform: !item.isOpen ? "rotate(180deg)" : "rotate(0)", 
                                             transition: "0.5s" ,
                                         }}
                                     /> */}
-                                    <RiArrowUpSLine
-                                        style = {{
-                                            transform: !item.isOpen ? "rotate(180deg)" : "rotate(0)", 
-                                            transition: "0.5s",
-                                            color: item.isOpen ? 'white' : '#FFFFFF4D',
-                                            fontSize: '28px'
-                                        }}
-                                    />
-                                </span>
+                                        <RiArrowUpSLine
+                                            style={{
+                                                transform: !item.isOpen ? "rotate(180deg)" : "rotate(0)",
+                                                transition: "0.5s",
+                                                color: item.isOpen ? 'white' : '#FFFFFF4D',
+                                                fontSize: '28px'
+                                            }}
+                                        />
+                                    </span>
+                                </div>
+                                <div
+                                    style={{
+                                        maxHeight: item.isOpen ? "500px" : "0px",
+                                        overflow: "hidden",
+                                        transition: "max-height 0.7s ease",
+                                        backgroundColor: '#191919',
+                                        padding: '0 16px',
+                                        color: 'white',
+                                        fontWeight: '300',
+                                        fontSize: '14px'
+                                    }}
+                                >
+                                    {item.text}
+                                </div>
                             </div>
-                            <div
-                                style={{
-                                    maxHeight: item.isOpen ? "500px" : "0px",
-                                    overflow: "hidden",
-                                    transition: "max-height 0.7s ease",
-                                    backgroundColor: '#191919',
-                                    padding: '0 16px',
-                                    color: 'white',
-                                    fontWeight: '300',
-                                    fontSize: '14px'
-                                }}
-                            >
-                                {item.text}
-                            </div>
-                        </div>
-                    ))
-                }
-            </div>
-            <img src={bg1} className='faqBackgroundImage2' />
-        </section>
+                        ))
+                    }
+                </div>
+                <img src={bg1} className='faqBackgroundImage2' />
+            </section>
         </Element>
     )
 }

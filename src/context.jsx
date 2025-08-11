@@ -1,21 +1,12 @@
 
-import { createContext, type ReactElement, useContext, useState } from "react";
-import type {THeader} from './types.ts';
+import { createContext, useContext, useState } from "react";
 
-interface IContext {
-    headerData: THeader[];
-    setHeaderData: (header: THeader[]) => void;
-}
 
-type TChildren = {
-    children: ReactElement;
-}
+const AppContext = createContext(undefined);
 
-const AppContext = createContext<IContext | undefined>(undefined);
+export const AppProvider = ({ children }) => {
 
-export const AppProvider = ({ children }: TChildren) => {
-
-    const [headerData, setHeaderData] = useState<THeader[]>([
+    const [headerData, setHeaderData] = useState([
         {
             id: 1,
             title: 'Home',
@@ -50,11 +41,11 @@ export const AppProvider = ({ children }: TChildren) => {
 
     return (
         <AppContext.Provider
-            value = {{
+            value={{
                 headerData, setHeaderData
             }}
         >
-            { children }
+            {children}
         </AppContext.Provider>
     )
 }

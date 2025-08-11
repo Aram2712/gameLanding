@@ -1,10 +1,10 @@
 
 import './App.scss';
-import MainSection from './Sections/MainSections.tsx';
-import ChooseUs from './Sections/ChooseUs.tsx';
-import VideoSection from './Sections/VideoSection.tsx';
-import FAQ from './Sections/FAQ.tsx';
-import Footer from './Sections/Footer.tsx';
+import MainSection from './Sections/MainSections.jsx';
+import ChooseUs from './Sections/ChooseUs.jsx';
+import VideoSection from './Sections/VideoSection.jsx';
+import FAQ from './Sections/FAQ.jsx';
+import Footer from './Sections/Footer.jsx';
 
 function App() {
     return(

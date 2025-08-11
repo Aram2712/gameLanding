@@ -22,12 +22,7 @@ const style = {
     outline: 'none'
 };
 
-type TProps = {
-    openMobileMenu: boolean,
-    setOpenMobileMenu: (show: boolean) => void
-}
-
-function MobileMenu(props: TProps) {
+function MobileMenu(props) {
 
     const { openMobileMenu, setOpenMobileMenu } = props;
 
@@ -48,30 +43,30 @@ function MobileMenu(props: TProps) {
             }}
         >
             <Slide in={openMobileMenu}>
-            <Box sx={style}>
-                <IoMdClose
-                    style={{
-                        color: 'white',
-                        fontSize: '32px',
-                        margin: '10px'
-                    }}
-                    onClick={close}
-                />
-                {
-                    headerData.map((item) => (
-                        <Link 
-                            to = {item.link} 
-                            smooth={true} 
-                            duration={500} 
-                            className='navigationItem mobileMenuItem'
-                            onClick = {close}
-                        >
-                            {item.title}
-                        </Link>
-                    ))
-                }
-                <span className='navigationItem mobileMenuItem'>Login</span>
-            </Box>
+                <Box sx={style}>
+                    <IoMdClose
+                        style={{
+                            color: 'white',
+                            fontSize: '32px',
+                            margin: '10px'
+                        }}
+                        onClick={close}
+                    />
+                    {
+                        headerData.map((item) => (
+                            <Link
+                                to={item.link}
+                                smooth={true}
+                                duration={500}
+                                className='navigationItem mobileMenuItem'
+                                onClick={close}
+                            >
+                                {item.title}
+                            </Link>
+                        ))
+                    }
+                    <span className='navigationItem mobileMenuItem'>Login</span>
+                </Box>
             </Slide>
         </Modal>
     )

@@ -3,29 +3,29 @@ import './component.scss';
 import { useGlobalContext } from '../context';
 import { Link } from 'react-scroll';
 import { useState } from 'react';
-import MobileMenu from './MobileMenu';
 import { GiHamburgerMenu } from "react-icons/gi";
+import MobileMenu from './MobileMenu';
 
 function Header() {
 
-    const { headerData } = useGlobalContext(); 
+    const { headerData } = useGlobalContext();
     const [openMobileMenu, setOpenMobileMenu] = useState(false);
 
-    return(
+    return (
         <div className={'header-container'}>
             <h2 className={'headerTitle'}>Test Test</h2>
             <div className='navigationContainer'>
                 {
                     headerData.map((item) => (
-                        <Link to = {item.link} smooth={true} duration={500} key = {item.id} className='navigationItem'>{item.title}</Link>
+                        <Link to={item.link} smooth={true} duration={500} key={item.id} className='navigationItem'>{item.title}</Link>
                     ))
                 }
             </div>
             <button className='loginBtn'>
-                Login in     
+                Login in
             </button>
             <GiHamburgerMenu
-                style = {{
+                style={{
                     color: '#EF6731',
                     fontSize: '40px'
                 }}
@@ -33,8 +33,8 @@ function Header() {
                 className='burgerIcon'
             />
             <MobileMenu
-                openMobileMenu = {openMobileMenu}
-                setOpenMobileMenu = {setOpenMobileMenu}
+                openMobileMenu={openMobileMenu}
+                setOpenMobileMenu={setOpenMobileMenu}
             />
         </div>
     )

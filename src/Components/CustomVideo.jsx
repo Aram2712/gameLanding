@@ -1,16 +1,11 @@
 
 import './component.scss';
-import { useRef, useState, useEffect, useCallback } from "react"; 
+import { useRef, useState, useEffect, useCallback } from "react";
 import playBtn from '../assets/play.svg';
 import poster from '../assets/videobg.svg'
 
-type TProps = {
-    src: string,
-    width: string
-}
-
-export default function CustomVideo({ src, width = "100%" }: TProps) {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
+export default function CustomVideo({ src, width = "100%" }) {
+  const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -28,7 +23,6 @@ export default function CustomVideo({ src, width = "100%" }: TProps) {
     }
   }, []);
 
-  // Синхронизируем состояние при ручном управлении (через native controls)
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
@@ -50,7 +44,7 @@ export default function CustomVideo({ src, width = "100%" }: TProps) {
   return (
     <div
       className="cv-wrapper"
-    
+
       tabIndex={0}
       role="region"
       aria-label="Video player"
@@ -63,25 +57,12 @@ export default function CustomVideo({ src, width = "100%" }: TProps) {
         playsInline
         onClick={togglePlay}
         poster={poster}
-        // Мы прячем нативные контролы; при необходимости включи controls
       />
-
-      
-      {/* <button
-        className={`cv-play-btn ${isPlaying ? "playing" : ""} ${!isLoaded ? "loading" : ""}`}
-        aria-label={isPlaying ? "Pause video" : "Play video"}
-      >
-        
-        <svg viewBox="0 0 24 24" className="cv-play-icon" aria-hidden="true">
-          <path d="M8 5v14l11-7z" />
-        </svg>
-        
-      </button> */}
-        <img src={playBtn}
-            className={`cv-play-btn ${isPlaying ? "playing" : ""}`}
-            aria-hidden="true"
-            onClick={togglePlay}
-        />
+      <img src={playBtn}
+        className={`cv-play-btn ${isPlaying ? "playing" : ""}`}
+        aria-hidden="true"
+        onClick={togglePlay}
+      />
     </div>
   );
 }
