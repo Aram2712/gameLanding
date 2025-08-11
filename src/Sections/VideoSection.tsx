@@ -4,6 +4,7 @@ import CustomVideo from '../Components/CustomVideo';
 import videoFile from '../assets/video.mp4';
 import line from '../assets/line.png';
 
+
 function VideoSection() {
     return(
         <section className='videoSection'>

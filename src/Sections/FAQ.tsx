@@ -5,6 +5,7 @@ import bg2 from '../assets/faqbg2.svg';
 import { useState } from 'react';
 import arrow from '../assets/arrow.png';
 import { Element } from 'react-scroll';
+import { RiArrowUpSLine } from "react-icons/ri";
 
 type TContent = {
     id: number,
@@ -86,7 +87,7 @@ function FAQ() {
                     isOpen: !elem.isOpen
                 }
             }
-            else return { ...elem }
+            else return { ...elem, isOpen: false }
         }))
     }
 
@@ -127,14 +128,23 @@ function FAQ() {
                                     style={{ 
                                         border: '1px solid #FFFFFF1A',
                                         padding: '5px 10px',
-                                        borderRadius: '5px'
+                                        borderRadius: '5px',
+                                        background: item.isOpen ? "#FFFFFF1A" : ""
                                     }}
                                 >
-                                    <img 
+                                    {/* <img 
                                         src = {arrow} 
                                         style = {{
                                             transform: !item.isOpen ? "rotate(180deg)" : "rotate(0)", 
                                             transition: "0.5s" ,
+                                        }}
+                                    /> */}
+                                    <RiArrowUpSLine
+                                        style = {{
+                                            transform: !item.isOpen ? "rotate(180deg)" : "rotate(0)", 
+                                            transition: "0.5s",
+                                            color: item.isOpen ? 'white' : '#FFFFFF4D',
+                                            fontSize: '28px'
                                         }}
                                     />
                                 </span>

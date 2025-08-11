@@ -14,6 +14,7 @@ function MainSection() {
             <Header/>
             <div className='titleAndMainImageBox'>
                 <h1 className='mainTitle'>
+                    <span>/// TEST TEST TE</span>
                     Test Test Test Test Test Test Test Test
                 </h1>
                 <img src = {mainImage} alt='main image' className='mainImage'/>

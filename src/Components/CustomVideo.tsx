@@ -2,6 +2,7 @@
 import './component.scss';
 import { useRef, useState, useEffect, useCallback } from "react"; 
 import playBtn from '../assets/play.svg';
+import poster from '../assets/videobg.svg'
 
 type TProps = {
     src: string,
@@ -61,7 +62,7 @@ export default function CustomVideo({ src, width = "100%" }: TProps) {
         preload="metadata"
         playsInline
         onClick={togglePlay}
-
+        poster={poster}
         // Мы прячем нативные контролы; при необходимости включи controls
       />
 

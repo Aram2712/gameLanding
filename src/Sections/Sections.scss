@@ -24,7 +24,7 @@
     height: calc(100vh - 100px);
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
     
 }
 
@@ -35,6 +35,14 @@
     white-space: wrap;
     font-size: 60px;
     text-transform: uppercase;
+    margin-left: 12%;
+}
+
+.mainTitle>span {
+    color: #EF6731;
+    font-size: 18px;
+    font-weight: 500;
+    display: block;
 }
 
 .mainImage {
@@ -214,16 +222,16 @@
         left: 0;
     }
     .chooseUsItemBox {
-        margin: 5px;
+        margin: 5px 0;
     }
     .cv-wrapper {
-        width: 98% !important
+        width: 95% !important
     }
     .bottomLine, .lineImage, .faqBackgroundImage1, .faqBackgroundImage2 {
         display: none;
     }
     .faqTextContentBox, .footerSection {
-        width: 98%;
+        width: 95%;
     }
 }
 
@@ -240,9 +248,9 @@
         position: relative;
         font-size: 32px;
         max-width: 90%;
-        margin: auto;
+        margin: auto 0;
         left: 0;
-        text-align: center;
+        // text-align: center;
     }
     .chooseUsbg, .chooseUsbg2 {
         display: none;
@@ -251,8 +259,9 @@
         justify-content: center;
     }
     .chooseUsSectionDataBox {
-        width: 98%;
+        width: 95%;
         position: relative;
+        margin: 0 auto;
     }
     .chooseUsData1Box {
         flex-direction: column;
