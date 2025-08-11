@@ -54,6 +54,7 @@
     height: 60px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     position: absolute;
     bottom: 20px;
     color: #FFFFFF4D;
@@ -71,6 +72,7 @@
 .downArrow {
     max-height: 20px;
     animation: bounce 1.5s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+    margin-top: 15px;
 }
 
 .chooseUsSection {
@@ -168,13 +170,13 @@
 .lineImage {
     position: absolute;
     top: 55px;
-    left: 12%
+    left: 14%
 }
 
 .bottomLine {
     position: absolute;
     bottom: 55px;
-    right: 12%;
+    right: 14%;
     z-index: 0;
 }
 
@@ -225,7 +227,7 @@
         margin: 5px 0;
     }
     .cv-wrapper {
-        width: 95% !important
+        width: 90% !important
     }
     .bottomLine, .lineImage, .faqBackgroundImage1, .faqBackgroundImage2 {
         display: none;
@@ -238,7 +240,7 @@
 @media screen and (max-width: 920px) {
     .titleAndMainImageBox {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
     }
     .mainImage {
         max-width: 100%;
@@ -247,9 +249,9 @@
     .mainTitle {
         position: relative;
         font-size: 32px;
-        max-width: 90%;
+        max-width: 70%;
         margin: auto 0;
-        left: 0;
+        left: 5%;
         // text-align: center;
     }
     .chooseUsbg, .chooseUsbg2 {
