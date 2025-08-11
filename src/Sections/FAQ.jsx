@@ -127,13 +127,6 @@ function FAQ() {
                                             background: item.isOpen ? "#FFFFFF1A" : ""
                                         }}
                                     >
-                                        {/* <img 
-                                        src = {arrow} 
-                                        style = {{
-                                            transform: !item.isOpen ? "rotate(180deg)" : "rotate(0)", 
-                                            transition: "0.5s" ,
-                                        }}
-                                    /> */}
                                         <RiArrowUpSLine
                                             style={{
                                                 transform: !item.isOpen ? "rotate(180deg)" : "rotate(0)",
@@ -146,7 +139,7 @@ function FAQ() {
                                 </div>
                                 <div
                                     style={{
-                                        maxHeight: item.isOpen ? "500px" : "0px",
+                                        maxHeight: item.isOpen ? "550px" : "0px",
                                         overflow: "hidden",
                                         transition: "max-height 0.7s ease",
                                         backgroundColor: '#191919',
