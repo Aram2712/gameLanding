@@ -3,7 +3,7 @@ import './Sections.scss';
 import bg1 from '../assets/fagbg1.svg';
 import bg2 from '../assets/faqbg2.svg';
 import { useState } from 'react';
-import arrow from '../assets/arrow.png';
+// import arrow from '../assets/arrow.png';
 import { Element } from 'react-scroll';
 import { RiArrowUpSLine } from "react-icons/ri";
 
