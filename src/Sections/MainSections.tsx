@@ -3,11 +3,13 @@ import './Sections.scss';
 import Header from '../Components/Header.tsx';
 import mainImage from '../assets/main.svg'
 import down from '../assets/down.svg'
-import { Link } from 'react-scroll';
+import { Link, Element } from 'react-scroll';
+
 
 function MainSection() {
    
     return(
+        <Element name = 'home' style = {{width: '100%'}}>
         <section className='mainSection'>
             <Header/>
             <div className='titleAndMainImageBox'>
@@ -21,6 +23,7 @@ function MainSection() {
                 <img src = {down} className='downArrow'/>
             </Link>
         </section>
+        </Element>
     )
 }
 

@@ -176,6 +176,10 @@
   margin: 0;
 }
 
+.burgerIcon {
+  display: none;
+}
+
 @media screen and (max-width: 1500px) {
   .header-container {
       width: 95%
@@ -191,5 +195,8 @@
     }
     .mobileNavigation {
       display: flex;
+    }
+    .burgerIcon {
+      display: inline-block;
     }
 }

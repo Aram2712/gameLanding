@@ -19,7 +19,7 @@ export const AppProvider = ({ children }: TChildren) => {
         {
             id: 1,
             title: 'Home',
-            link: '',
+            link: 'home',
             active: false
         },
         {

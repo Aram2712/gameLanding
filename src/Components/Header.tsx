@@ -30,6 +30,7 @@ function Header() {
                     fontSize: '40px'
                 }}
                 onClick={() => setOpenMobileMenu(true)}
+                className='burgerIcon'
             />
             <MobileMenu
                 openMobileMenu = {openMobileMenu}
