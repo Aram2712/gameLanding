@@ -13,6 +13,8 @@ export default function CustomVideo({ src, width = "100%" }: TProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
 
+  console.log(width, isLoaded)
+
   const togglePlay = useCallback(() => {
     const v = videoRef.current;
     if (!v) return;
